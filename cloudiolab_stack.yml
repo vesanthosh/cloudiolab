@@ -13,7 +13,6 @@ services:
       - /docker_volumes/letsencrypt/etc/letsencrypt/live/cloudiolab.com/privkey.pem:/etc/letsencrypt/live/cloudiolab.com/privkey.pem
       - /docker_volumes/letsencrypt/etc/letsencrypt/live/www.cloudiolab.com/fullchain.pem:/etc/letsencrypt/live/www.cloudiolab.com/fullchain.pem
       - /docker_volumes/letsencrypt/etc/letsencrypt/live/www.cloudiolab.com/privkey.pem:/etc/letsencrypt/live/www.cloudiolab.com/privkey.pem
-      - /docker_volumes/letsencrypt/etc/letsencrypt/live:/etc/letsencrypt/live
     depends_on:
       - cloudiolab
     networks:
