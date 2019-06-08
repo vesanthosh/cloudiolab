@@ -1,11 +1,11 @@
 version: '3.7'
 services:
-  reverse_proxy:
-    image: vesanthosh/reverse_proxy:latest
+  cloudiolab:
+    image: vesanthosh/cloudiolab:latest
     ports:
-      - "80:80"
-      - "443:443"
+      - "3000:3000"
     networks:
       - common_network
+
 networks:
   common_network:
