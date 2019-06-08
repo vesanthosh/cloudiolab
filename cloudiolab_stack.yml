@@ -1,0 +1,53 @@
+version: '3.7'
+services:
+  reverse_proxy:
+    image: vesanthosh/reverse_proxy:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /root/page_for_letsencrypt/www.cloudiolab.com:/usr/share/nginx/html/www.cloudiolab.com
+      - /docker_volumes/dhparam/cloudiolab.com-dhparam-4096.pem:/etc/ssl/certs/dhparam/cloudiolab.com-dhparam-4096.pem
+      - /docker_volumes/dhparam/www.cloudiolab.com-dhparam-4096.pem:/etc/ssl/certs/dhparam/www.cloudiolab.com-dhparam-4096.pem
+      - /docker_volumes/letsencrypt/etc/letsencrypt/live/cloudiolab.com/fullchain.pem:/etc/letsencrypt/live/cloudiolab.com/fullchain.pem
+      - /docker_volumes/letsencrypt/etc/letsencrypt/live/cloudiolab.com/privkey.pem:/etc/letsencrypt/live/cloudiolab.com/privkey.pem
+      - /docker_volumes/letsencrypt/etc/letsencrypt/live/www.cloudiolab.com/fullchain.pem:/etc/letsencrypt/live/www.cloudiolab.com/fullchain.pem
+      - /docker_volumes/letsencrypt/etc/letsencrypt/live/www.cloudiolab.com/privkey.pem:/etc/letsencrypt/live/www.cloudiolab.com/privkey.pem
+      - /docker_volumes/letsencrypt/etc/letsencrypt/live:/etc/letsencrypt/live
+    depends_on:
+      - cloudiolab
+    networks:
+      - common_network
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 3
+        window: 180s
+      placement:
+        constraints: [node.role == manager]
+  cloudiolab:
+    image: vesanthosh/cloudiolab:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - common_network
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 3
+        window: 120s
+      placement:
+        constraints: [node.role == manager]
+
+networks:
+  common_network:
