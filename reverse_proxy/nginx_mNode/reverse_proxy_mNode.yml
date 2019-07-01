@@ -1,6 +1,7 @@
 version: '3.7'
+
 services:
-  reverse_proxy_mNode:
+  nginx:
     image: nginx:mainline-alpine
     ports:
       - "80:80"
