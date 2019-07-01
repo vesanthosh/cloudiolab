@@ -19,7 +19,7 @@ services:
       - source: mNode-nginx-01072118
         target: /etc/nginx/conf.d/default.conf
     networks:
-      - common_network_mNode
+      - cloudiolab_common_network_mNode
     deploy:
       replicas: 1
       update_config:
@@ -32,7 +32,9 @@ services:
         constraints: [node.hostname == mNode]
 
 networks:
-  common_network_mNode:
+  cloudiolab_common_network_mNode:
+    external: true
+
 secrets:
   cloudiolab.com.fullchain.pem:
     external: true
