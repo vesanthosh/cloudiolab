@@ -1,0 +1,9 @@
+#!/bin/bash
+
+read -p "Enter the domain name that you want generate SSL/TLS Certificate: " domainName
+read -p "Enter your E-mail Address for letsencrypt: " email
+read -p "Enter the location where you want to store the certificate (e.g. /certs/letsencrypt): " certLocation
+read -p "Enter the location of website content (e.g. /page_for_letsencrypt/<domain>): " webLocation
+
+# Generate SSL/TLS Certificate with certbot docker container
+docker run -it --rm -v "$certLocation:/etc/letsencrypt" -v "$webLocation:/data/letsencrypt" certbot/certbot certonly --webroot --webroot-path /data/letsencrypt --email $email --agree-tos --no-eff-email -d $domainName

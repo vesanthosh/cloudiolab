@@ -1,0 +1,50 @@
+version: '3.7'
+services:
+  reverse_proxy_mNode:
+    image: nginx:mainline-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /page_for_letsencrypt/www.cloudiolab.com:/usr/share/nginx/html/www.cloudiolab.com
+    secrets:
+      - cloudiolab.com.fullchain.pem
+      - cloudiolab.com.privkey.pem
+      - cloudiolab.com.dhparam.pem
+      - www.cloudiolab.com.fullchain.pem
+      - www.cloudiolab.com.privkey.pem
+      - www.cloudiolab.com.dhparam.pem
+    configs:
+      - source: nginx-30062052
+        target: /etc/nginx/conf.d/default.conf
+    networks:
+      - common_network_mNode
+    deploy:
+      replicas: 1
+      update_config:
+        failure_action: rollback
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints: [node.hostname == mNode]
+
+networks:
+  common_network_mNode:
+secrets:
+  cloudiolab.com.fullchain.pem:
+    external: true
+  cloudiolab.com.privkey.pem:
+    external: true
+  cloudiolab.com.dhparam.pem:
+    external: true
+  www.cloudiolab.com.fullchain.pem:
+    external: true
+  www.cloudiolab.com.privkey.pem:
+    external: true
+  www.cloudiolab.com.dhparam.pem:
+    external: true
+configs:
+  nginx-30062052:
+    file: ./nginx.conf

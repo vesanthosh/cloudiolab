@@ -1,0 +1,9 @@
+#!/bin/bash
+
+read -p "Enter the domain name that you want generate Diffie-Hellman (DH) key-exchange: " domainName
+read -p "Enter Number of bits (e.g. 4096): " bits
+read -p "Enter the location where you want to store the DH key-exchange (e.g. /certs/dhparam): " dhParamLocation
+
+# Generate diffie hellman key exchange
+sudo mkdir -p $dhParamLocation
+sudo openssl dhparam -out $dhParamLocation/$domainName-dhparam-$bits.pem $bits
