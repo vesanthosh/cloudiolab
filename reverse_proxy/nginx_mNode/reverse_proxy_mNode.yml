@@ -16,7 +16,7 @@ services:
       - www.cloudiolab.com.07072019.privkey.pem
       - www.cloudiolab.com.07072019.dhparam.pem
     configs:
-      - source: nginx_mNode-02072153
+      - source: nginx_mNode-07071555
         target: /etc/nginx/conf.d/default.conf
     networks:
       - cloudiolab_common_network_mNode
@@ -50,5 +50,5 @@ secrets:
     external: true
 
 configs:
-  nginx_mNode-02072153:
+  nginx_mNode-07071555:
     file: ./nginx.conf
