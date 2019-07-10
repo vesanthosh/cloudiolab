@@ -16,8 +16,11 @@ services:
       - www.cloudiolab.com.07072019.fullchain.pem
       - www.cloudiolab.com.07072019.privkey.pem
       - www.cloudiolab.com.07072019.dhparam.pem
+      - me.cloudiolab.com.10072019.fullchain.pem
+      - me.cloudiolab.com.10072019.privkey.pem
+      - me.cloudiolab.com.10072019.dhparam.pem
     configs:
-      - source: nginx_mNode-07071555
+      - source: nginx_mNode-11070028
         target: /etc/nginx/conf.d/default.conf
     networks:
       - cloudiolab_common_network_mNode
@@ -49,7 +52,13 @@ secrets:
     external: true
   www.cloudiolab.com.07072019.dhparam.pem:
     external: true
+  me.cloudiolab.com.10072019.fullchain.pem:
+    external: true
+  me.cloudiolab.com.10072019.privkey.pem:
+    external: true
+  me.cloudiolab.com.10072019.dhparam.pem:
+    external: true
 
 configs:
-  nginx_mNode-07071555:
+  nginx_mNode-11070028:
     file: ./nginx.conf
