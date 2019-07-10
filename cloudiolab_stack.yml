@@ -4,7 +4,7 @@ services:
   cloudiolab:
     image: vesanthosh/cloudiolab:latest
     ports:
-      - "3000:3000"
+      - "3001:3000"
     networks:
       - cloudiolab_common_network_mNode
     deploy:
