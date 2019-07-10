@@ -8,6 +8,7 @@ services:
       - "443:443"
     volumes:
       - /page_for_letsencrypt/www.cloudiolab.com:/usr/share/nginx/html/www.cloudiolab.com
+      - /page_for_letsencrypt/me.cloudiolab.com:/usr/share/nginx/html/me.cloudiolab.com
     secrets:
       - cloudiolab.com.07072019.fullchain.pem
       - cloudiolab.com.07072019.privkey.pem
