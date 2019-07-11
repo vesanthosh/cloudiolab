@@ -1,11 +1,13 @@
 # Build frontend
 FROM node:alpine AS builder
 
+ENV NODE_ENV=production
+
 WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm install --production && npm cache clean --force
 
 COPY . .
 
