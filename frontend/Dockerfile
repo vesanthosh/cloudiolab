@@ -1,15 +1,23 @@
-FROM node:alpine
-
-ENV NODE_ENV=production
+# Build frontend
+FROM node:alpine AS builder
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN npm ci --only=production
+RUN npm install
 
 COPY . .
 
-EXPOSE 3000
+RUN npm run build
 
-CMD [ "npm","start" ]
+# Gettting ready for production
+FROM node:alpine
+
+RUN npm install -g serve
+
+WORKDIR /usr/src/app
+
+COPY --from=builder /usr/src/app/build .
+
+CMD ["serve", "-p", "3001", "-s", "."]
