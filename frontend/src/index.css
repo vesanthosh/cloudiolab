@@ -11,6 +11,30 @@ body {
   background-color: #fafafa;
 }
 
+.name {
+  font-weight: normal;
+  margin: 0px;
+  font-size: 100px;
+ }
+ 
+body .content p {
+  font-size: 20px;
+  margin: 5px 0 10px 10px;
+  padding: 0px; 
+}
+
+  a {
+    color: #ff6a00;
+    text-decoration: none!important; 
+  }
+    a:hover {
+      color: #ce181e; 
+    }
+
+  hr{
+    border-color: darkgray
+  }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
