@@ -24,7 +24,7 @@ services:
       - docker.cloudiolab.com.12072019.privkey.pem
       - docker.cloudiolab.com.12072019.dhparam.pem
     configs:
-      - source: nginx_mNode-12071716
+      - source: nginx_mNode-12071754
         target: /etc/nginx/conf.d/default.conf
     networks:
       - cloudiolab_common_network_mNode
@@ -70,5 +70,5 @@ secrets:
     external: true
 
 configs:
-  nginx_mNode-12071716:
+  nginx_mNode-12071754:
     file: ./nginx.conf
