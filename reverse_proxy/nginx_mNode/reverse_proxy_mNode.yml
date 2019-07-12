@@ -9,6 +9,7 @@ services:
     volumes:
       - /page_for_letsencrypt/www.cloudiolab.com:/usr/share/nginx/html/www.cloudiolab.com
       - /page_for_letsencrypt/me.cloudiolab.com:/usr/share/nginx/html/me.cloudiolab.com
+      - /page_for_letsencrypt/docker.cloudiolab.com:/usr/share/nginx/html/docker.cloudiolab.com
     secrets:
       - cloudiolab.com.07072019.fullchain.pem
       - cloudiolab.com.07072019.privkey.pem
@@ -19,8 +20,11 @@ services:
       - me.cloudiolab.com.10072019.fullchain.pem
       - me.cloudiolab.com.10072019.privkey.pem
       - me.cloudiolab.com.10072019.dhparam.pem
+      - docker.cloudiolab.com.12072019.fullchain.pem
+      - docker.cloudiolab.com.12072019.privkey.pem
+      - docker.cloudiolab.com.12072019.dhparam.pem
     configs:
-      - source: nginx_mNode-11071353
+      - source: nginx_mNode-12071716
         target: /etc/nginx/conf.d/default.conf
     networks:
       - cloudiolab_common_network_mNode
@@ -58,7 +62,13 @@ secrets:
     external: true
   me.cloudiolab.com.10072019.dhparam.pem:
     external: true
+  docker.cloudiolab.com.12072019.fullchain.pem:
+    external: true
+  docker.cloudiolab.com.12072019.privkey.pem:
+    external: true
+  docker.cloudiolab.com.12072019.dhparam.pem:
+    external: true
 
 configs:
-  nginx_mNode-11071353:
+  nginx_mNode-12071716:
     file: ./nginx.conf
