@@ -5,9 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background: #3C3B3F; 
-  background: -webkit-linear-gradient(to right, #605C3C, #3C3B3F);
-  background: linear-gradient(to right, #605C3C, #3C3B3F); */
   background-color: #fafafa;
 }
 
@@ -18,7 +15,7 @@ body {
  }
  
 body .content p {
-  font-size: 20px;
+  font-size: 18px;
   margin: 5px 0 10px 10px;
   padding: 0px; 
 }
