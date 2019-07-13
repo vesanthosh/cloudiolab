@@ -20,7 +20,7 @@ services:
       - me.cloudiolab.com.13072019.privkey.pem
       - me.cloudiolab.com.13072019.dhparam.pem
     configs:
-      - source: nginx_jarvis-13071950
+      - source: nginx_jarvis-13072141
         target: /etc/nginx/conf.d/default.conf
     networks:
       - cloudiolab_common_network_jarvis
@@ -60,5 +60,5 @@ secrets:
     external: true
 
 configs:
-  nginx_jarvis-13071950:
+  nginx_jarvis-13072141:
     file: ./nginx.conf
