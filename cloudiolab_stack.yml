@@ -6,7 +6,7 @@ services:
     ports:
       - "3001:3001"
     networks:
-      - cloudiolab_common_network_mNode
+      - cloudiolab_common_network_jarvis
     deploy:
       replicas: 1
       update_config:
@@ -16,8 +16,8 @@ services:
       restart_policy:
         condition: on-failure
       placement:
-        constraints: [node.hostname == mNode]
+        constraints: [node.hostname == jarvis]
 
 networks:
-  cloudiolab_common_network_mNode:
+  cloudiolab_common_network_jarvis:
     external: true
