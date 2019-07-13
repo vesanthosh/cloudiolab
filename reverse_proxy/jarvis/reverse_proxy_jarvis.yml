@@ -1,0 +1,64 @@
+version: '3.7'
+
+services:
+  nginx_jarvis:
+    image: nginx:mainline-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /page_for_letsencrypt/www.cloudiolab.com:/usr/share/nginx/html/www.cloudiolab.com
+      - /page_for_letsencrypt/me.cloudiolab.com:/usr/share/nginx/html/me.cloudiolab.com
+    secrets:
+      - cloudiolab.com.13072019.fullchain.pem
+      - cloudiolab.com.13072019.privkey.pem
+      - cloudiolab.com.13072019.dhparam.pem
+      - www.cloudiolab.com.13072019.fullchain.pem
+      - www.cloudiolab.com.13072019.privkey.pem
+      - www.cloudiolab.com.13072019.dhparam.pem
+      - me.cloudiolab.com.13072019.fullchain.pem
+      - me.cloudiolab.com.13072019.privkey.pem
+      - me.cloudiolab.com.13072019.dhparam.pem
+    configs:
+      - source: nginx_jarvis-13071950
+        target: /etc/nginx/conf.d/default.conf
+    networks:
+      - cloudiolab_common_network_jarvis
+    deploy:
+      replicas: 1
+      update_config:
+        failure_action: rollback
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints: [node.hostname == jarvis]
+
+networks:
+  cloudiolab_common_network_jarvis:
+    external: true
+
+secrets:
+  cloudiolab.com.13072019.fullchain.pem:
+    external: true
+  cloudiolab.com.13072019.privkey.pem:
+    external: true
+  cloudiolab.com.13072019.dhparam.pem:
+    external: true
+  www.cloudiolab.com.13072019.fullchain.pem:
+    external: true
+  www.cloudiolab.com.13072019.privkey.pem:
+    external: true
+  www.cloudiolab.com.13072019.dhparam.pem:
+    external: true
+  me.cloudiolab.com.13072019.fullchain.pem:
+    external: true
+  me.cloudiolab.com.13072019.privkey.pem:
+    external: true
+  me.cloudiolab.com.13072019.dhparam.pem:
+    external: true
+
+configs:
+  nginx_jarvis-13071950:
+    file: ./nginx.conf
