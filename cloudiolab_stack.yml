@@ -6,7 +6,7 @@ services:
     ports:
       - "3001:3001"
     networks:
-      - cloudiolab_common_network_jarvis
+      - cloudiolab_common_network
     deploy:
       replicas: 1
       update_config:
@@ -19,5 +19,5 @@ services:
         constraints: [node.hostname == jarvis]
 
 networks:
-  cloudiolab_common_network_jarvis:
+  cloudiolab_common_network:
     external: true
