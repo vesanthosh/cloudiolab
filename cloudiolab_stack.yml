@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   cloudiolab:
-    image: vesanthosh/cloudiolab:latest
+    image: docker.cloudiolab.com/cloudiolab/cloudiolab:1.0
     ports:
       - "3001:3001"
     networks:
