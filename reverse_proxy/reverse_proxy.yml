@@ -10,6 +10,7 @@ services:
       - /page_for_letsencrypt/www.cloudiolab.com:/usr/share/nginx/html/www.cloudiolab.com
       - /page_for_letsencrypt/me.cloudiolab.com:/usr/share/nginx/html/me.cloudiolab.com
       - /page_for_letsencrypt/docker.cloudiolab.com:/usr/share/nginx/html/docker.cloudiolab.com
+      - registry_portus_static:/srv/Portus/public:ro
     secrets:
       - cloudiolab.com.14072019.fullchain.pem
       - cloudiolab.com.14072019.privkey.pem
@@ -24,7 +25,7 @@ services:
       - docker.cloudiolab.com.14072019.privkey.pem
       - docker.cloudiolab.com.14072019.dhparam.pem
     configs:
-      - source: nginx-14071939
+      - source: nginx-15071238
         target: /etc/nginx/conf.d/default.conf
     networks:
       - cloudiolab_common_network
@@ -41,6 +42,10 @@ services:
 
 networks:
   cloudiolab_common_network:
+    external: true
+
+volumes:
+  registry_portus_static:
     external: true
 
 secrets:
@@ -70,5 +75,5 @@ secrets:
     external: true
 
 configs:
-  nginx-14071939:
+  nginx-15071238:
     file: ./nginx.conf
