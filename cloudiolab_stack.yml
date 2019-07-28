@@ -16,7 +16,7 @@ services:
       restart_policy:
         condition: on-failure
       placement:
-        constraints: [node.hostname == jarvis]
+        constraints: [node.hostname == cloudiolab-jarvis]
 
 networks:
   cloudiolab_common_network:
