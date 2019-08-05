@@ -10,6 +10,7 @@ services:
       - /page_for_letsencrypt/www.cloudiolab.com:/usr/share/nginx/html/www.cloudiolab.com
       - /page_for_letsencrypt/me.cloudiolab.com:/usr/share/nginx/html/me.cloudiolab.com
       - /page_for_letsencrypt/docker.cloudiolab.com:/usr/share/nginx/html/docker.cloudiolab.com
+      - /page_for_letsencrypt/dothings.cloudiolab.com:/usr/share/nginx/html/dothings.cloudiolab.com
       - registry_portus_static:/srv/Portus/public:ro
     secrets:
       - cloudiolab.com.14072019.fullchain.pem
@@ -24,8 +25,11 @@ services:
       - docker.cloudiolab.com.14072019.fullchain.pem
       - docker.cloudiolab.com.14072019.privkey.pem
       - docker.cloudiolab.com.14072019.dhparam.pem
+      - dothings.cloudiolab.com.04082019.fullchain.pem
+      - dothings.cloudiolab.com.04082019.privkey.pem
+      - dothings.cloudiolab.com.04082019.dhparam.pem
     configs:
-      - source: nginx-15071238
+      - source: nginx-05081625
         target: /etc/nginx/conf.d/default.conf
     networks:
       - cloudiolab_common_network
@@ -73,7 +77,13 @@ secrets:
     external: true
   docker.cloudiolab.com.14072019.dhparam.pem:
     external: true
+  dothings.cloudiolab.com.04082019.fullchain.pem:
+    external: true
+  dothings.cloudiolab.com.04082019.privkey.pem:
+    external: true
+  dothings.cloudiolab.com.04082019.dhparam.pem:
+    external: true
 
 configs:
-  nginx-15071238:
+  nginx-05081625:
     file: ./nginx.conf
