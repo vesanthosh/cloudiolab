@@ -29,7 +29,7 @@ services:
       - dothings.cloudiolab.com.04082019.privkey.pem
       - dothings.cloudiolab.com.04082019.dhparam.pem
     configs:
-      - source: nginx-05081625
+      - source: nginx-07081910
         target: /etc/nginx/conf.d/default.conf
     networks:
       - cloudiolab_common_network
@@ -85,5 +85,5 @@ secrets:
     external: true
 
 configs:
-  nginx-05081625:
+  nginx-07081910:
     file: ./nginx.conf
