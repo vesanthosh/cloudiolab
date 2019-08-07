@@ -13,8 +13,7 @@ class Landing extends Component {
                         <div className="text-center mt-4 mb-4">
                             <p className="font-italic">Greetings from cloud laboratory.</p>
                             <p>A full stack developler and his presonal cloud laboratory to play with swarm and kubernetes cluster.</p>
-                            <p>A person who made this laboratory is working on something.</p>
-                            <p>Please tell him to clean the laboratory (Codebase), if you see this guy. And don't forget to <a href="https://me.cloudiolab.com" target="_blank" rel="noopener noreferrer"><i>Say Hello,...!</i></a>.</p>
+                            <p>Why don't you <a href="https://me.cloudiolab.com" target="_blank" rel="noopener noreferrer"><i>say hello,...!</i></a>.</p>
                         </div>
                         <hr />
                         <p className="text-center font-weight-bold mt-4 mb-4">Everything you see here is running on either SWARM / Kubernetes cluster</p>
