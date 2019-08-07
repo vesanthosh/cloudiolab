@@ -33,8 +33,8 @@ class Landing extends Component {
                                     <h5 className="card-title">Do-Things</h5>
                                     <h6 className="card-subtitle mb-2 text-muted">In Development</h6>
                                     <p className="card-text">Share your tasks / goals and let others knows your social activities. Get help or help others through social task sharing platform.</p>
-                                    <a className="card-link" href="https://dothingsprivate.herokuapp.com/" target="_blank" rel="noopener noreferrer">Need a free ride?</a>
-                                    <a className="card-link" href="https://github.com/vesanthosh/dothings-cloudiolab" target="_blank" rel="noopener noreferrer">Github</a>
+                                    <a className="card-link" href="https://dothings.cloudiolab.com/" target="_blank" rel="noopener noreferrer">Need a free ride?</a>
+                                    <a className="card-link" href="https://github.com/vesanthosh/dothings_cloudiolab" target="_blank" rel="noopener noreferrer">Github</a>
                                 </div>
                             </div>
                         </div>
