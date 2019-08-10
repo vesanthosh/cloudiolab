@@ -12,11 +12,11 @@ class Landing extends Component {
                         <hr />
                         <div className="text-center mt-4 mb-4">
                             <p className="font-italic">Greetings from cloud laboratory.</p>
-                            <p>A full stack developler and his presonal cloud laboratory to play with swarm and kubernetes cluster.</p>
+                            <p>A full-stack developer and his private cloud laboratory to play with Docker SWARM cluster.</p>
                             <p>Why don't you <a href="https://me.cloudiolab.com" target="_blank" rel="noopener noreferrer"><i>say hello,...!</i></a>.</p>
                         </div>
                         <hr />
-                        <p className="text-center font-weight-bold mt-4 mb-4">Everything you see here is running on either SWARM / Kubernetes cluster</p>
+                        <p className="text-center font-weight-bold mt-4 mb-4">Everything you see here is running on Docker SWARM cluster.</p>
                         <div class="card-deck mt-4">
                             <div className="card text-center">
                                 <div className="card-body">
@@ -30,8 +30,8 @@ class Landing extends Component {
                             <div className="card text-center">
                                 <div className="card-body">
                                     <h5 className="card-title">Do-Things</h5>
-                                    <h6 className="card-subtitle mb-2 text-muted">In Development</h6>
-                                    <p className="card-text">Share your tasks / goals and let others knows your social activities. Get help or help others through social task sharing platform.</p>
+                                    <h6 className="card-subtitle mb-2 text-muted">In Production</h6>
+                                    <p className="card-text">Share your tasks/goals and let others know your social activities. Get help or help others through social task-sharing platform.</p>
                                     <a className="card-link" href="https://dothings.cloudiolab.com/" target="_blank" rel="noopener noreferrer">Need a free ride?</a>
                                     <a className="card-link" href="https://github.com/vesanthosh/dothings_cloudiolab" target="_blank" rel="noopener noreferrer">Github</a>
                                 </div>
