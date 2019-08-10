@@ -9,3 +9,5 @@ yarn.lock
 README.md
 LICENSE
 .vscode
+package-lock.json
+yarn.lock
