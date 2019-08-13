@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   cloudiolab:
-    image: docker.cloudiolab.com/cloudiolab/cloudiolab:2.0
+    image: docker.cloudiolab.com/cloudiolab/cloudiolab:2.1
     ports:
       - "3001:3001"
     networks:
