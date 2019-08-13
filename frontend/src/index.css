@@ -12,6 +12,7 @@ body {
   font-weight: normal;
   margin: 0px;
   font-size: 100px;
+  color: #355959;
  }
  
 body .content p {
@@ -29,10 +30,37 @@ body .content p {
     }
 
   hr{
-    border-color: darkgray
+    border-color: darkgray;
   }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.technology{
+  display: block;
+  font-style: italic;
+  color: #64a2a2;
+}
+
+.card-title{
+  color: #355959;
+}
+
+.card-subtitle{
+  color: #64a2a2;
+}
+
+.card-text{
+  color: #355959;
+}
+
+.normal-font-color{
+  color: #355959;
+}
+
+.hr-main{
+  border-color: #355959;
+  border-width: 2px;
 }

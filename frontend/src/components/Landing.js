@@ -9,14 +9,14 @@ class Landing extends Component {
                 <div className="text-dark">
                     <div className="content mb-5">
                         <h1 className="name text-center mt-5">Cloud<img src={siteImage} alt="Site logo" />lab</h1>
-                        <hr />
+                        <hr className="hr-main" />
                         <div className="text-center mt-4 mb-4">
-                            <p className="font-italic">Greetings from cloud laboratory.</p>
-                            <p>A full-stack developer and his private cloud laboratory to play with Docker SWARM cluster.</p>
-                            <p>Why don't you <a href="https://me.cloudiolab.com" target="_blank" rel="noopener noreferrer"><i>say hello,...!</i></a>.</p>
+                            <p className="font-italic normal-font-color">Greetings from cloud laboratory.</p>
+                            <p className="normal-font-color">A full-stack developer and his private cloud space for hobby projects to play with Docker SWARM cluster.</p>
+                            <p className="normal-font-color">Why don't you <a href="https://me.cloudiolab.com" target="_blank" rel="noopener noreferrer"><i>say hello,...!</i></a>.</p>
                         </div>
-                        <hr />
-                        <p className="text-center font-weight-bold mt-4 mb-4">Everything you see here is running on Docker SWARM cluster.</p>
+                        <hr className="hr-main" />
+                        <p className="text-center font-weight-bold mt-4 mb-4 normal-font-color">Everything you see here is running on Docker SWARM cluster.</p>
                         <div class="card-deck mt-4">
                             <div className="card text-center">
                                 <div className="card-body">
