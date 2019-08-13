@@ -23,6 +23,8 @@ class Landing extends Component {
                                     <h5 className="card-title">Private Docker Registry</h5>
                                     <h6 className="card-subtitle mb-2 text-muted">In Production</h6>
                                     <p className="card-text">Gives freedom to share your custom base images within organization to keep consistent, private and centralized source of your images.</p>
+                                    <hr />
+                                    <p className="technology"><b>Behind the Screen:</b> Portus, MariaDB, Registry 2.0, Clair and PostgreSQL</p>
                                     <a className="card-link" href="https://docker.cloudiolab.com" target="_blank" rel="noopener noreferrer">Need a free ride?</a>
                                     <a className="card-link" href="https://github.com/vesanthosh/docker_cloudiolab" target="_blank" rel="noopener noreferrer">Github</a>
                                 </div>
@@ -30,8 +32,10 @@ class Landing extends Component {
                             <div className="card text-center">
                                 <div className="card-body">
                                     <h5 className="card-title">Do-Things</h5>
-                                    <h6 className="card-subtitle mb-2 text-muted">In Production</h6>
+                                    <h6 className="card-subtitle mb-2 text-muted">In Development</h6>
                                     <p className="card-text">Share your tasks/goals and let others know your social activities. Get help or help others through social task-sharing platform.</p>
+                                    <hr />
+                                    <p className="technology"><b>Behind the Screen:</b> React.js, Redux, Express.js and MongoDB </p>
                                     <a className="card-link" href="https://dothings.cloudiolab.com/" target="_blank" rel="noopener noreferrer">Need a free ride?</a>
                                     <a className="card-link" href="https://github.com/vesanthosh/dothings_cloudiolab" target="_blank" rel="noopener noreferrer">Github</a>
                                 </div>
@@ -41,8 +45,10 @@ class Landing extends Component {
                             <div className="card bg-light text-center">
                                 <div className="card-body">
                                     <h5 className="card-title">Cricket Planner</h5>
-                                    <h6 className="card-subtitle mb-2 text-muted">Coming Soon...</h6>
+                                    <h6 className="card-subtitle mb-2 text-muted">In UI/UX Design</h6>
                                     <p className="card-text">Find the right time to play that suits everyone. Predict the optimal date and time about who is interested.</p>
+                                    <hr />
+                                    <p className="technology"><b>Behind the Screen:</b> under discussion</p>
                                     <a className="card-link" href="https://cricket.cloudiolab.com" target="_blank" rel="noopener noreferrer">Need a free ride?</a>
                                     <a className="card-link" href="https://github.com/vesanthosh/cricket_cloudiolab" target="_blank" rel="noopener noreferrer">Github</a>
                                 </div>
@@ -52,13 +58,15 @@ class Landing extends Component {
                                     <h5 className="card-title">Cluster Monitoring</h5>
                                     <h6 className="card-subtitle mb-2 text-muted">Brainstorming</h6>
                                     <p className="card-text">Dashboard that tracks and monitors container, node's metrics and perfomance from SWARM / Kubernetes cluster. </p>
+                                    <hr />
+                                    <p className="technology"><b>Behind the Screen:</b> ELK Stack / Prometheus with Grafana</p>
                                     {/* <a href="#" className="card-link">Card link</a>
                                     <a href="#" className="card-link">Another link</a> */}
                                 </div>
                             </div>
                         </div>
 
-                        <hr />
+                        <hr className="hr-main" />
                         <div class="card-deck mt-4">
                             <div className="card text-center">
                                 <div className="card-body">
