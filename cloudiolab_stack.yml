@@ -1,8 +1,8 @@
-version: '3.7'
+version: "3.7"
 
 services:
   cloudiolab:
-    image: docker.cloudiolab.com/cloudiolab/cloudiolab:2.1
+    image: docker.cloudiolab.com/cloudiolab/cloudiolab:1.0
     ports:
       - "3001:3001"
     networks:
@@ -11,12 +11,12 @@ services:
       replicas: 1
       update_config:
         failure_action: rollback
-        parallelism: 1
+        parallelism: 2
         delay: 10s
       restart_policy:
         condition: on-failure
       placement:
-        constraints: [node.hostname == cloudiolab-jarvis]
+        constraints: [node.hostname == jarvis]
 
 networks:
   cloudiolab_common_network:
