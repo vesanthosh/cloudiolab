@@ -1,4 +1,4 @@
-version: '3.7'
+version: "3.7"
 
 services:
   nginx:
@@ -29,7 +29,7 @@ services:
       - dothings.cloudiolab.com.04082019.privkey.pem
       - dothings.cloudiolab.com.04082019.dhparam.pem
     configs:
-      - source: nginx-07081910
+      - source: nginx-29080114
         target: /etc/nginx/conf.d/default.conf
     networks:
       - cloudiolab_common_network
@@ -37,12 +37,12 @@ services:
       replicas: 1
       update_config:
         failure_action: rollback
-        parallelism: 1
+        parallelism: 2
         delay: 10s
       restart_policy:
         condition: on-failure
       placement:
-        constraints: [node.hostname == cloudiolab-jarvis]
+        constraints: [node.hostname == jarvis]
 
 networks:
   cloudiolab_common_network:
@@ -85,5 +85,5 @@ secrets:
     external: true
 
 configs:
-  nginx-07081910:
+  nginx-29080114:
     file: ./nginx.conf
