@@ -16,24 +16,24 @@ services:
     secrets:
       - cloudiolab.com.30112019.fullchain.pem
       - cloudiolab.com.30112019.privkey.pem
-      - cloudiolab.com.01092019.dhparam.pem
+      - cloudiolab.com.30112019.dhparam.pem
       - www.cloudiolab.com.30112019.fullchain.pem
       - www.cloudiolab.com.30112019.privkey.pem
-      - www.cloudiolab.com.01092019.dhparam.pem
+      - www.cloudiolab.com.30112019.dhparam.pem
       - me.cloudiolab.com.30112019.fullchain.pem
       - me.cloudiolab.com.30112019.privkey.pem
-      - me.cloudiolab.com.01092019.dhparam.pem
+      - me.cloudiolab.com.30112019.dhparam.pem
       - docker.cloudiolab.com.30112019.fullchain.pem
       - docker.cloudiolab.com.30112019.privkey.pem
-      - docker.cloudiolab.com.01092019.dhparam.pem
+      - docker.cloudiolab.com.30112019.dhparam.pem
       - dothings.cloudiolab.com.30112019.fullchain.pem
       - dothings.cloudiolab.com.30112019.privkey.pem
-      - dothings.cloudiolab.com.01092019.dhparam.pem
+      - dothings.cloudiolab.com.30112019.dhparam.pem
       - jenkins.cloudiolab.com.30112019.fullchain.pem
       - jenkins.cloudiolab.com.30112019.privkey.pem
-      - jenkins.cloudiolab.com.01092019.dhparam.pem
+      - jenkins.cloudiolab.com.30112019.dhparam.pem
     configs:
-      - source: nginx-30111228
+      - source: nginx-30111248
         target: /etc/nginx/conf.d/default.conf
     networks:
       - cloudiolab_common_network
@@ -61,39 +61,39 @@ secrets:
     external: true
   cloudiolab.com.30112019.privkey.pem:
     external: true
-  cloudiolab.com.01092019.dhparam.pem:
+  cloudiolab.com.30112019.dhparam.pem:
     external: true
   www.cloudiolab.com.30112019.fullchain.pem:
     external: true
   www.cloudiolab.com.30112019.privkey.pem:
     external: true
-  www.cloudiolab.com.01092019.dhparam.pem:
+  www.cloudiolab.com.30112019.dhparam.pem:
     external: true
   me.cloudiolab.com.30112019.fullchain.pem:
     external: true
   me.cloudiolab.com.30112019.privkey.pem:
     external: true
-  me.cloudiolab.com.01092019.dhparam.pem:
+  me.cloudiolab.com.30112019.dhparam.pem:
     external: true
   docker.cloudiolab.com.30112019.fullchain.pem:
     external: true
   docker.cloudiolab.com.30112019.privkey.pem:
     external: true
-  docker.cloudiolab.com.01092019.dhparam.pem:
+  docker.cloudiolab.com.30112019.dhparam.pem:
     external: true
   dothings.cloudiolab.com.30112019.fullchain.pem:
     external: true
   dothings.cloudiolab.com.30112019.privkey.pem:
     external: true
-  dothings.cloudiolab.com.01092019.dhparam.pem:
+  dothings.cloudiolab.com.30112019.dhparam.pem:
     external: true
   jenkins.cloudiolab.com.30112019.fullchain.pem:
     external: true
   jenkins.cloudiolab.com.30112019.privkey.pem:
     external: true
-  jenkins.cloudiolab.com.01092019.dhparam.pem:
+  jenkins.cloudiolab.com.30112019.dhparam.pem:
     external: true
 
 configs:
-  nginx-30111228:
+  nginx-30111248:
     file: ./nginx.conf
