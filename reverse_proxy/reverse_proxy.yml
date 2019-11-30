@@ -33,7 +33,7 @@ services:
       - jenkins.cloudiolab.com.30112019.privkey.pem
       - jenkins.cloudiolab.com.30112019.dhparam.pem
     configs:
-      - source: nginx-30111248
+      - source: nginx-30111446
         target: /etc/nginx/conf.d/default.conf
     networks:
       - cloudiolab_common_network
@@ -95,5 +95,5 @@ secrets:
     external: true
 
 configs:
-  nginx-30111248:
+  nginx-30111446:
     file: ./nginx.conf
